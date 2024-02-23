@@ -104,6 +104,7 @@ final class PackerTest extends TestCase
             [99, '/tmp/source.data', '/tmp/packed.data'],
             [999, '/tmp/source.data', '/tmp/packed.data'],
             [9999, '/tmp/source.data', '/tmp/packed.data'],
+            [99999, '/tmp/source.data', '/tmp/packed.data'],
         ];
     }
 

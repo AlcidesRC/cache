@@ -1,3 +1,5 @@
+[![Integration Tests](https://github.com/fonil/cache/actions/workflows/integration-tests.yml/badge.svg)](https://github.com/fonil/cache/actions/workflows/integration-tests.yml)
+
 # Cache Packer
 
 This repository contains a PHP class that allows to optimize the cacheable arrays in order to optimize the required memory consumption.

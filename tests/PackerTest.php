@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 
 final class PackerTest extends TestCase
 {
-    private const string STATS_FILENAME = '/output/stats.log';
+    private const string STATS_FILENAME = '/tmp/stats.log';
 
     private const string STATS_LINE = 'Total rows: {rows} | Source: {sizeSource} bytes | Packed: {sizePacked} bytes | Optimized {percentage} %' . PHP_EOL;
 

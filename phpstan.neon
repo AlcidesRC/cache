@@ -1,0 +1,9 @@
+parameters:
+    level: 9
+    paths:
+        - src
+        - tests
+    ignoreErrors:
+       -
+            message: '#Static method Fonil\\Tests\\Cache\\PackerTest::[a-zA-Z0-9\\_]+\(\) is unused.#'
+            path: tests/PackerTest.php

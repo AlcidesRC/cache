@@ -96,7 +96,7 @@ Lake Alexannemouth, IL 77929-0777";i:5;s:16:"Port Yvetteville";i:6;s:5:"00537";i
 [
   'keys' => ['id', 'firstName', 'lastName', 'email', 'address', 'city', 'postcode', 'country'],
   'data' => [
-  	[
+    [
       1,
       'Hope',
       'Pacocha',

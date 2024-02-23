@@ -9,7 +9,7 @@ This repository contains a PHP class that allows to optimize the cacheable array
 You can install the package via composer:
 
 ```bash
-$ composer require fonil/coloreeze
+$ composer require fonil/cache
 ```
 
 ## How It Works

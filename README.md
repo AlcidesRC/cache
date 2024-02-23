@@ -143,8 +143,9 @@ use Fonil\Cache\Packer;
 
 // Reduce by 25% memory consuptions in average by using Packer
 $users = Packer::unpack(cache()->remember('users', 300, function () {
-	$users = DB::table('users')->get();    
-    return Packer::pack($users);
+    return Packer::pack(
+        DB::table('users')->get()
+    );
 }));
 ```
 

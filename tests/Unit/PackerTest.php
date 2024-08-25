@@ -2,15 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Tests\Cache;
+namespace Cache\Tests\Unit;
 
-use Faker\Factory;
-use Faker\Generator;
 use Cache\Exceptions\WrongPackerSchemaException;
 use Cache\Packer;
+use Faker\Factory;
+use Faker\Generator;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
+#[CoversClass(\Cache\Packer::class)]
+#[CoversClass(\Cache\Exceptions\WrongPackerSchemaException::class)]
 final class PackerTest extends TestCase
 {
     private const string STATS_FILENAME = '/tmp/stats.log';
@@ -24,9 +28,7 @@ final class PackerTest extends TestCase
         $this->faker = Factory::create();
     }
 
-    /**
-     * @covers \Cache\Packer::pack
-     */
+    #[Test]
     public function testPackedSchemaShouldContainRequiredKeys(): void
     {
         $source = $this->generateFakedData(9);
@@ -40,10 +42,7 @@ final class PackerTest extends TestCase
         $this->assertEquals(array_keys($first), $packed['keys']);
     }
 
-    /**
-     * @covers \Cache\Packer::pack
-     * @covers \Cache\Packer::unpack
-     */
+    #[Test]
     public function testUnpackedVersionMatchesSource(): void
     {
         $source = $this->generateFakedData(9);
@@ -57,12 +56,8 @@ final class PackerTest extends TestCase
         $this->assertEquals($source, $unpacked);
     }
 
-    /**
-     * @covers \Cache\Packer::pack
-     * @covers \Cache\Packer::unpack
-     *
-     * @dataProvider sizesProvider
-     */
+    #[Test]
+    #[DataProvider('sizesProvider')]
     public function testPackedVersionRequiresLessResources(
         int $rows,
         string $sourceFilename,
@@ -99,7 +94,7 @@ final class PackerTest extends TestCase
     /**
      * @return array<int,mixed>
      */
-    private static function sizesProvider(): array
+    public static function sizesProvider(): array
     {
         return [
             [9, '/tmp/source.data', '/tmp/packed.data'],
@@ -111,10 +106,10 @@ final class PackerTest extends TestCase
     }
 
     /**
-     * @covers \Cache\Packer::unpack
-     * @param array<string,array<string,mixed>> $packed
-     * @dataProvider exceptionProvider
+     * @param non-empty-array<string, array> $packed
      */
+    #[Test]
+    #[DataProvider('exceptionProvider')]
     public function testExpectsExceptionWithWrongPackedKeysKey(array $packed, string $message): void
     {
         $this->expectException(WrongPackerSchemaException::class);
@@ -126,7 +121,7 @@ final class PackerTest extends TestCase
     /**
      * @return array<int,mixed>
      */
-    private static function exceptionProvider(): array
+    public static function exceptionProvider(): array
     {
         return [
             [[], 'Wrong schema: expected key [ keys ] is required'],

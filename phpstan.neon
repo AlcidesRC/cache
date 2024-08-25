@@ -5,5 +5,5 @@ parameters:
         - tests
     ignoreErrors:
        -
-            message: '#Static method Fonil\\Tests\\Cache\\PackerTest::[a-zA-Z0-9\\_]+\(\) is unused.#'
+            message: '#Static method Tests\\Cache\\PackerTest::[a-zA-Z0-9\\_]+\(\) is unused.#'
             path: tests/PackerTest.php

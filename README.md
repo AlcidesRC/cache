@@ -1,4 +1,4 @@
-[![Integration Tests](https://github.com/alcidesrc/cache/actions/workflows/integration-tests.yml/badge.svg)](https://github.com/alcidesrc/cache/actions/workflows/integration-tests.yml)
+[![Integration Tests](https://github.com/AlcidesRC/cache/actions/workflows/integration-tests.yml/badge.svg)](https://github.com/AlcidesRC/cache/actions/workflows/integration-tests.yml)
 
 # Cache Packer
 

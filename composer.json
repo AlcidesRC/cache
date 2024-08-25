@@ -1,15 +1,11 @@
 {
-    "name": "fonil/cache",
+    "name": "alcidesrc/cache",
     "description": "A PHP class that allows to optimize cacheable arrays by packing/unpacking the schema",
     "keywords": ["php", "cache", "array"],
-    "homepage": "https://github.com/fonildev/cache",
+    "homepage": "https://github.com/alcidesrc/cache",
     "type": "library",
     "license": "MIT",
     "authors": [
-        {
-            "name": "Fonil Dev",
-            "homepage": "https://fonil.dev/"
-        },
         {
             "name": "Alcides Ramos",
             "email": "info@alcidesrc.com",
@@ -17,7 +13,7 @@
         }
     ],
     "require": {
-        "php": "^7.4|^8.0"
+        "php": "^8.3"
     },
     "require-dev": {
         "phpunit/phpunit": "^9",
@@ -27,16 +23,16 @@
     },
     "autoload": {
         "psr-4": {
-            "Fonil\\Cache\\": "src/"
+            "Cache\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Fonil\\Tests\\Cache\\": "tests/"
+            "Tests\\Cache\\": "tests/"
         }
     },
     "scripts": {
-        "test": "phpunit --colors --coverage-text",
+        "tests": "phpunit --configuration=phpunit.xml --coverage-text --testdox --colors --order-by=random --random-order-seed=$(head -200 /dev/urandom | cksum | cut -f1 -d \" \")",
         "analyse": "phpstan analyse --configuration=phpstan.neon --ansi",
         "check-style": "phpcs -p --standard=PSR12 --exclude=Generic.Files.LineLength --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests",
         "fix-style": "phpcbf -p --standard=PSR12 --exclude=Generic.Files.LineLength --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"

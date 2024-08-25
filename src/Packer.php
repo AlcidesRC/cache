@@ -1,8 +1,10 @@
 <?php
 
-namespace Fonil\Cache;
+declare(strict_types=1);
 
-use Fonil\Cache\Exceptions\WrongPackerSchemaException;
+namespace Cache;
+
+use Cache\Exceptions\WrongPackerSchemaException;
 
 final class Packer
 {

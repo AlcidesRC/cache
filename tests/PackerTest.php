@@ -1,11 +1,13 @@
 <?php
 
-namespace Fonil\Tests\Cache;
+declare(strict_types=1);
+
+namespace Tests\Cache;
 
 use Faker\Factory;
 use Faker\Generator;
-use Fonil\Cache\Exceptions\WrongPackerSchemaException;
-use Fonil\Cache\Packer;
+use Cache\Exceptions\WrongPackerSchemaException;
+use Cache\Packer;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
@@ -23,7 +25,7 @@ final class PackerTest extends TestCase
     }
 
     /**
-     * @covers \Fonil\Cache\Packer::pack
+     * @covers \Cache\Packer::pack
      */
     public function testPackedSchemaShouldContainRequiredKeys(): void
     {
@@ -39,8 +41,8 @@ final class PackerTest extends TestCase
     }
 
     /**
-     * @covers \Fonil\Cache\Packer::pack
-     * @covers \Fonil\Cache\Packer::unpack
+     * @covers \Cache\Packer::pack
+     * @covers \Cache\Packer::unpack
      */
     public function testUnpackedVersionMatchesSource(): void
     {
@@ -56,8 +58,8 @@ final class PackerTest extends TestCase
     }
 
     /**
-     * @covers \Fonil\Cache\Packer::pack
-     * @covers \Fonil\Cache\Packer::unpack
+     * @covers \Cache\Packer::pack
+     * @covers \Cache\Packer::unpack
      *
      * @dataProvider sizesProvider
      */
@@ -109,7 +111,7 @@ final class PackerTest extends TestCase
     }
 
     /**
-     * @covers \Fonil\Cache\Packer::unpack
+     * @covers \Cache\Packer::unpack
      * @param array<string,array<string,mixed>> $packed
      * @dataProvider exceptionProvider
      */

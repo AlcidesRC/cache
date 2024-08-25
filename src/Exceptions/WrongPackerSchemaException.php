@@ -1,6 +1,8 @@
 <?php
 
-namespace Fonil\Cache\Exceptions;
+declare(strict_types=1);
+
+namespace Cache\Exceptions;
 
 class WrongPackerSchemaException extends \Exception
 {

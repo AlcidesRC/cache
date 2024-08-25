@@ -1,4 +1,4 @@
-[![Integration Tests](https://github.com/fonil/cache/actions/workflows/integration-tests.yml/badge.svg)](https://github.com/fonil/cache/actions/workflows/integration-tests.yml)
+[![Integration Tests](https://github.com/alcidesrc/cache/actions/workflows/integration-tests.yml/badge.svg)](https://github.com/alcidesrc/cache/actions/workflows/integration-tests.yml)
 
 # Cache Packer
 
@@ -11,7 +11,7 @@ This repository contains a PHP class that allows to optimize the cacheable array
 You can install the package via composer:
 
 ```bash
-$ composer require fonil/cache
+$ composer require alcidesrc/cache
 ```
 
 ## How It Works
@@ -141,7 +141,7 @@ This package can be used as a library.
 ```php
 <?php
 
-use Fonil\Cache\Packer;
+use Cache\Packer;
 
 // Reduce by 25% memory consuptions in average by using Packer
 $users = Packer::unpack(cache()->remember('users', 300, function () {
@@ -175,16 +175,16 @@ Code Coverage report summary:
 
 ```
 Code Coverage Report:     
-  2024-02-23 10:06:34     
+  2024-08-25 12:03:18     
                           
  Summary:                 
   Classes: 100.00% (1/1)  
   Methods: 100.00% (2/2)  
   Lines:   100.00% (23/23)
 
-Fonil\Cache\Exceptions\WrongPackerSchemaException
+Cache\Exceptions\WrongPackerSchemaException
   Methods:  ( 0/ 0)   Lines:  (  0/  0)
-Fonil\Cache\Packer
+Cache\Packer
   Methods: 100.00% ( 2/ 2)   Lines: 100.00% ( 23/ 23)
 ```
 
@@ -236,8 +236,8 @@ Only the latest major version receives security fixes.
 
 ### Reporting a Vulnerability
 
-If you discover a security vulnerability within this project, please [open an issue here](https://github.com/fonil/cache/issues). All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within this project, please [open an issue here](https://github.com/alcidesrc/cache/issues). All security vulnerabilities will be promptly addressed.
 
 ## License
 
-The MIT License (MIT). Please see [License File](https://github.com/fonil/cache/blob/main/LICENSE) for more information.
+The MIT License (MIT). Please see [License File](https://github.com/alcidesrc/cache/blob/main/LICENSE) for more information.
